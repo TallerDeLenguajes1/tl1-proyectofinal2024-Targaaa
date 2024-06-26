@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace Api{
     public class PjApi{
         
@@ -10,6 +12,7 @@ namespace Api{
         public string magic {get; set;} 
         public string agility {get; set;}
     }
+    
     public class Respuesta{
         public List<PjApi> Items { get; set; }
     }
@@ -36,8 +39,8 @@ namespace Api{
             {
                 Console.WriteLine("Ocurrió un error: " + ex.Message);
             }
-
             return listaPersonajes;
+
         }
     }
 }

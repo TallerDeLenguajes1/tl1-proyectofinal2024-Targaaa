@@ -1,4 +1,4 @@
-namespace CreacionPj;
+namespace Personajes;
     public class Personaje { 
         private Datos datos;
         private Caracteristicas caracteristicas;

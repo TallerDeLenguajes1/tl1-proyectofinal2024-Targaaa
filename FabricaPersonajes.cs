@@ -1,25 +1,24 @@
-using System.Diagnostics;
-using Api;
-using CreacionPj;
 
-namespace Creaciones;
-    public class CreacionPj{
+using Api;
+using Personajes;
+
+namespace Creaciones{
         public class Fabrica{
             private static Random random = new Random();
-            public static List<Personaje> cargarDatos(List<Personaje> listaPersonajes, List<PersonajesApi> personajesApi){
+            public static List<Personaje> cargarDatos(List<Personaje> listaPersonajes, List<PjApi> personajesApi){
                 foreach(var personaje in personajesApi){
                     Personaje nuevoPersonaje = new Personaje();
+                    
+                    nuevoPersonaje.Datos.Name = personaje.name;
+                    nuevoPersonaje.Datos.Endurance = personaje.endurance;
+                    nuevoPersonaje.Datos.Agility = personaje.agility;
+                    nuevoPersonaje.Datos.ClassName = personaje.className;
+                    nuevoPersonaje.Datos.Luck = personaje.luck;
+                    nuevoPersonaje.Datos.Magic = personaje.magic;
+                    nuevoPersonaje.Datos.NoblePhantasms = personaje.noblePhantasms;
+                    nuevoPersonaje.Datos.Story  = personaje.story;
 
-                    nuevoPersonaje.Datos.Name = personaje.Name;
-                    nuevoPersonaje.Datos.Endurance = personaje.Endurance;
-                    nuevoPersonaje.Datos.Agility = personaje.Agility;
-                    nuevoPersonaje.Datos.ClassName = personaje.ClassName;
-                    nuevoPersonaje.Datos.Luck = personaje.Luck;
-                    nuevoPersonaje.Datos.Magic = personaje.Magic;
-                    nuevoPersonaje.Datos.NoblePhantasms = personaje.NoblePhantasms;
-                    nuevoPersonaje.Datos.Story  = personaje.Story;
-
-                    switch (personaje.Luck){
+                    switch (personaje.luck){
                         case "A++":
                         case "A+":
                         case "A":
@@ -62,7 +61,7 @@ namespace Creaciones;
                             nuevoPersonaje.Caracteristicas.AtkBase = random.Next(10,41)*0.6;
                         break;
                     }
-                    switch (personaje.Agility){
+                    switch (personaje.agility){
                         case "A++":
                         case "A+":
                         case "A":
@@ -105,7 +104,7 @@ namespace Creaciones;
                             nuevoPersonaje.Caracteristicas.Defensa = random.Next(10,41)*0.6;
                         break;
                     }
-                    nuevoPersonaje.Caracteristicas.Nivel= 1;
+                    nuevoPersonaje.Caracteristicas.Nivel = 1;
                     
                     listaPersonajes.Add(nuevoPersonaje);
                 }

@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿﻿using ArmarJsonPjsConApi;
+using Personajes;
+
+///////Cargar datos desde Api//////////
+await CargadorDatos.CargarDatosPersonajesAsync();
+
+//Obtengo la lista de peleadores del torneo
+List<Personaje> lista16Personajes  = LuchadoresTorneo.Torneo.ObtenerListaPeleadores();
+
+Console.WriteLine("\nLos personajes del torneo son:");
+foreach (var personaje in lista16Personajes)
+{
+    Console.WriteLine(personaje.Datos.Name);
+}
