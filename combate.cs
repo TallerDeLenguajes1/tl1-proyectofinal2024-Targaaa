@@ -1,0 +1,6 @@
+namespace Combate
+{
+    class Batalla{
+        
+    }
+}
