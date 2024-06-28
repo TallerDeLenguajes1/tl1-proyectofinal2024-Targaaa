@@ -1,14 +1,12 @@
-﻿﻿using ArmarJsonPjsConApi;
+﻿using ArmarJsonPjsConApi;
 using Personajes;
+using Inicio;
+using Elegidos;
 
-///////Cargar datos desde Api//////////
+
 await CargadorDatos.CargarDatosPersonajesAsync();
+//Inicio.Presentacion.Inicio(); 
+//Console.Clear();
 
-//Obtengo la lista de peleadores del torneo
-List<Personaje> lista16Personajes  = LuchadoresTorneo.Torneo.ObtenerListaPeleadores();
 
-Console.WriteLine("\nLos personajes del torneo son:");
-foreach (var personaje in lista16Personajes)
-{
-    Console.WriteLine(personaje.Datos.Name);
-}
+Console.WriteLine("\nPersonajes elegidos:");
