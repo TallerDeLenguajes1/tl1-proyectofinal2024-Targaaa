@@ -30,9 +30,9 @@ namespace Personajes{
 } 
 public class Caracteristicas
     {   
-        private double hpBase; //vida
-        private double atkBase; //ataque
-        private int nivel; //el nivel ira aumentando conforme vaya avanzando de ronda en el torneo
+        private double hpBase;
+        private double atkBase; 
+        private int nivel; 
         private double defensa;
         public Caracteristicas()
         {
