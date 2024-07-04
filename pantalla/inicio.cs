@@ -42,7 +42,7 @@ namespace Inicio
         Cada decisión que tomes puede acercarte a la victoria... o a la destrucción.
 
         ¿Estás listo para asumir tu destino y luchar por tus sueños? La Guerra del Santo Grial te espera.");
-        Thread.Sleep(10000);
+        Thread.Sleep(5000);
         Console.WriteLine("\nIngrese una tecla para continuar\n");
         Console.ReadKey(true);
         Elegidos.Candidatos.personajePrincipal();
