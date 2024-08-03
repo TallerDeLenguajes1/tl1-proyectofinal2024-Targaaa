@@ -25,25 +25,21 @@ namespace Personajes{
         public string Name { get => name; set => name = value;}
         public int Rarity { get => rarity; set => rarity = value;}
 
-
-
-} 
-public class Caracteristicas
+    } 
+    public class Caracteristicas
     {   
-        private double hpBase;
-        private double atkBase; 
-        private int nivel; 
+        private double hp;
+        private double atk;
         private double defensa;
         public Caracteristicas()
         {
-            hpBase = 0;
-            atkBase = 0;
-            nivel = 0;
+            hp = 0;
+            atk = 0; 
             defensa = 0;
         }
-        public int Nivel { get => nivel; set => nivel = value;}
+        
         public double Defensa { get => defensa; set => defensa = value;}
-        public double AtkBase { get => atkBase; set => atkBase = value;}
-        public double HpBase{ get => hpBase; set => hpBase = value; }
+        public double Atk { get => atk; set => atk = value;}
+        public double Hp{ get => hp; set => hp = value; }
     }
 }
