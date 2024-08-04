@@ -2,6 +2,7 @@ using System.Reflection;
 using Personajes;
 using Elegidos;
 
+
 namespace Inicio
 {
     public class Presentacion
@@ -46,6 +47,7 @@ namespace Inicio
         Console.WriteLine("\nIngrese una tecla para continuar\n");
         Console.ReadKey(true);
         Elegidos.Candidatos.personajePrincipal();
+        
         }
     }
 }
