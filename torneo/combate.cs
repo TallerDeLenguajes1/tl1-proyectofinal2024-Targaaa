@@ -39,7 +39,7 @@ namespace Combate
                         }
                     }while(key != ConsoleKey.Enter);
                     switch(opcionSeleccionada){
-                        case 0: // case 1 o 0?
+                        case 0: 
                             ataqueNormal(usuario, bot);
                             turno = 1; //cambio turno
                             break;

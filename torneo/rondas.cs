@@ -2,12 +2,13 @@ using Personajes;
 using Combate;
 using Minijuego;
 using Features;
+using Historial;
 
 namespace Rondas
 {
     public class Formato
     {
-        public static void armadoCombates(List<Personaje> lista)
+        public static void armadoCombates(List<Personaje> lista, List<HistorialGanadores> listado)
         {
             Personaje personajeUsuario = lista[0];
             primerEncuentro(lista);
@@ -31,6 +32,7 @@ namespace Rondas
                         if(ganadoresCuartoEncuentro.Contains(personajeUsuario))
                         {
                             Console.WriteLine("\n ganaste");
+                            historialGanadores.CargarHistorial(personajeUsuario.Datos.Name, listado);
                         }
                     }
                 }
