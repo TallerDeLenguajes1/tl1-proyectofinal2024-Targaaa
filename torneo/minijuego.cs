@@ -28,9 +28,10 @@ namespace Minijuego
             Utilidades.EscribirLento("\n¿Qué es esto?...");
             Utilidades.EscribirLento("\nParece un código, pero nose si tengo tiempo de descifrarlo.");
             Thread.Sleep(2000);
-            Console.WriteLine("**************************************************************************************");
+            Console.WriteLine("\n**************************************************************************************");
             Utilidades.EscribirLento("\nAdivinar la palabra te traerá benificios, pero quien sabe que te pasara si te equivocas...");
-            Console.WriteLine("**************************************************************************************");
+            Console.WriteLine("\n**************************************************************************************");
+            Thread.Sleep(2000);
             string[] opciones = new string[]
             {
                 "si","no",
@@ -72,7 +73,7 @@ namespace Minijuego
             Random random = new Random();
             palabraElegida = palabras[random.Next(palabras.Count)];
             
-
+            
             for (int intento = 0; intento < intentos; intento++)
             {
                 Console.Write($"Intento {intento + 1} de {intentos}: ");
@@ -104,24 +105,73 @@ namespace Minijuego
             return prueba.Equals(palabraElegida, StringComparison.OrdinalIgnoreCase);
         }
 
+        
         private void Coincidencias(string prueba)
         {
             char[] coincide = new char[5];
+            Dictionary<char, int> cuentaPalabraElegida = new Dictionary<char, int>();
+            Dictionary<char, int> cuentaProcesadas = new Dictionary<char, int>();
+
+            // Contar apariciones de cada letra en palabraElegida
+            foreach (char c in palabraElegida)
+            {
+                if (cuentaPalabraElegida.ContainsKey(c))
+                {
+                    cuentaPalabraElegida[c]++;
+                }
+                else
+                {
+                    cuentaPalabraElegida[c] = 1;
+                }
+            }
+
+            // Primer bucle para letras en la posición correcta
             for (int i = 0; i < 5; i++)
             {
                 if (prueba[i] == palabraElegida[i])
                 {
                     coincide[i] = Char.ToUpper(prueba[i]);
-                }
-                else if (palabraElegida.Contains(prueba[i]))
-                {
-                    coincide[i] = Char.ToLower(prueba[i]);
+                    if (!cuentaProcesadas.ContainsKey(prueba[i]))
+                    {
+                        cuentaProcesadas[prueba[i]] = 0;
+                    }
+                    cuentaProcesadas[prueba[i]]++;
                 }
                 else
                 {
                     coincide[i] = '_';
                 }
             }
+
+            // Segundo bucle para letras correctas en posición incorrecta
+            for (int i = 0; i < 5; i++)
+            {
+                if (coincide[i] == '_') // Solo procesar posiciones que no han sido identificadas como correctas
+                {
+                    if (palabraElegida.Contains(prueba[i]))
+                    {
+                        if (!cuentaProcesadas.ContainsKey(prueba[i]))
+                        {
+                            cuentaProcesadas[prueba[i]] = 0;
+                        }
+
+                        if (cuentaProcesadas[prueba[i]] < cuentaPalabraElegida[prueba[i]])
+                        {
+                            coincide[i] = Char.ToLower(prueba[i]);
+                            cuentaProcesadas[prueba[i]]++;
+                        }
+                        else
+                        {
+                            coincide[i] = '_';
+                        }
+                    }
+                    else
+                    {
+                        coincide[i] = '_';
+                    }
+                }
+            }
+
             Console.WriteLine($"Coinciden: {new string(coincide)}");
         }
     }

@@ -55,7 +55,7 @@ namespace Combate
                 }
                 else
                 {
-                    int aux = rand.Next(0, 1);
+                    int aux = rand.Next(0, 2);
                     if(aux == 1)
                     {
                         ataqueNormal(bot,usuario);
@@ -101,8 +101,15 @@ namespace Combate
             else{
                 defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - (atacante.Caracteristicas.Atk)*2;
                 Console.Clear();
-                Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + (atacante.Caracteristicas.Atk)*2 + "de daño\n");
-                Console.WriteLine("\nSalud restante:" + defensor.Caracteristicas.Hp);
+                Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque especial y causó " + (atacante.Caracteristicas.Atk)*2 + "de daño\n");
+                if(defensor.Caracteristicas.Hp < 0)
+                {
+                    Console.WriteLine("\nSalud restante: 0");
+                }
+                else
+                {
+                    Console.WriteLine("\nSalud restante: " + defensor.Caracteristicas.Hp);
+                }
                 Thread.Sleep(2000);
             }
         }
@@ -120,7 +127,7 @@ namespace Combate
                         (_______)|/     \|(_______/(_______/\_______/|/    )_)|/     \|
                     " + resetColor);
             Thread.Sleep(2000);
-            Console.WriteLine("\n " + usuario.Datos.Name + "Esta decepcionado de ti...");
+            Console.WriteLine("\n " + usuario.Datos.Name + " está decepcionado de ti...");
         }
         private static Random rand = new Random();
     }

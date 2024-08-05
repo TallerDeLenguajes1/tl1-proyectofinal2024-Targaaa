@@ -32,7 +32,7 @@ namespace Rondas
                         if(ganadoresCuartoEncuentro.Contains(personajeUsuario))
                         {
                             Console.WriteLine("\n ganaste");
-                            historialGanadores.CargarHistorial(personajeUsuario.Datos.Name, listado);
+                            HistorialGanadores.CargarHistorial(personajeUsuario, listado);
                         }
                     }
                 }
@@ -41,47 +41,52 @@ namespace Rondas
         private static void primerEncuentro(List<Personaje> listaPersonajes)
         {
             Console.Clear(); 
-            Utilidades.EscribirLento(@"Despues de pasar horas obteniendo información sobre esta guerra y tus openentes,
+            Utilidades.EscribirLento(@"             Despues de pasar horas obteniendo información sobre esta guerra y tus openentes,
             decides tomarte un descanso para prepararte correctamente. Fue justamente durante ese descanso que 
-            sientes que te observan, te giras para investigar y antes de darte cuenta te intentaron rebanar el cuello.");
-            Utilidades.EscribirLento(@"Con el alma encendida por la determinación y la adrenalina corriendo por tus venas,
-            te preparas para enfrentar a tu oponente. La guerra no esperará, y tampoco lo hará tu enemigo.");
+            sientes que te observan, te giras para investigar y antes de darte cuenta te intentaron rebanar el cuello.
+            Con el alma encendida por la determinación y la adrenalina corriendo por tus
+            venas, te preparas para enfrentar a tu oponente. La guerra no esperará, y tampoco lo hará tu enemigo.");
             Utilidades.EscribirLento("\nTe enfrantas a " + listaPersonajes[1].Datos.Name);
             Utilidades.EscribirLento("\nQue comience la batalla!!");
+            Console.WriteLine("\n-----------PRIMER COMBATE-----------");
+            Console.ForegroundColor = ConsoleColor.Green;
             Utilidades.EscribirLento("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
             Console.Clear();
-            Console.WriteLine("-----------PRIMER COMBATE-----------");
         }
         private static void segundoEncuentro(List<Personaje> listaPersonajes)
         {
             Console.Clear();
-            Console.WriteLine(@"*cof cof, tose sangre*, ese bastardo era mas fuerte de lo que pensaba, no lo crees"
-            + listaPersonajes[0].Datos.Name +"? Tranquilízate... Mientras yo este de tu lado solo habrá un ganador y ese seras tú");
-            Console.WriteLine(@"Haha..., es reconfortante tener un compañero tan seguro de sí mismo,
-            aunque tienes razón, es mejor estar tranquilo. Vamos, esto recien comienza.");
-            Utilidades.EscribirLento(".            .            .");
-            Console.WriteLine(@"No puede ser, es "+ listaPersonajes[1].Datos.Name + " tenemos que huir");
-            Console.WriteLine(@" "+listaPersonajes[1].Datos.Name + ":Por lo que veo me conocen, eso facilitará las cosas.");
-            Console.WriteLine("Bien, haganme el favor de dejarme asesinarlos");
-            Console.WriteLine(" "+listaPersonajes[0]+":Acaso no escuchaste lo que te dije recien? Sea quien sea el rival, no perderemos");
+            Console.WriteLine(@"*Cof cof, tose sangre*.Ese bastardo era mas fuerte de lo que pensaba, no lo crees "
+            + listaPersonajes[0].Datos.Name +"?");
+            Console.WriteLine(""+ listaPersonajes[0].Datos.Name + ": Tranquilízate... Mientras yo este de tu lado solo habrá un ganador y ese seras tú.");
+            Console.WriteLine(@"Haha..., es reconfortante tener un compañero tan seguro de sí mismo, y sí... tienes razón, es mejor estar tranquilo.
+            Vamos, esto recien comienza.");
+            Utilidades.EscribirLento(".            .            .\n");
+            Console.WriteLine(@"No puede ser... es "+ listaPersonajes[1].Datos.Name + " tenemos que huir "+listaPersonajes[0].Datos.Name);
+            Console.WriteLine(@" "+listaPersonajes[1].Datos.Name + ": Por lo que veo me conocen, eso me facilitará las cosas.");
+            Console.WriteLine(@" "+listaPersonajes[1].Datos.Name + ": Asique... haganme el favor de morir.");
+            Console.WriteLine(@"Rayos, nose que hacer en esta situación, ni siquiera se si podríamos llegar a escapar.");
+            Console.WriteLine(" "+listaPersonajes[0].Datos.Name+": Acaso no escuchaste lo que te dije recien? Sea quien sea el rival, no perderemos.");
+            Console.WriteLine("-----------SEGUNDO COMBATE-----------");
+            Console.ForegroundColor = ConsoleColor.Green;
             Utilidades.EscribirLento("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
             Console.Clear();
-            Console.WriteLine("-----------SEGUNDO COMBATE-----------");
         }
 
         private static void tercerEncuentro(List<Personaje> listaPersonajes)
         {
-            Console.WriteLine("@*Despues de descansar de la ultima batalla decides salir a buscar a tu proximo rival");
-            Console.WriteLine("Escuchas a dos rivales pelear a lo lejos y decides ir a opinar*");
+            Console.WriteLine(@"*Despues de descansar de la ultima batalla decides salir a buscar a tu proximo rival.");
+            Console.WriteLine("Escuchas a dos guerreros pelear a lo lejos y decides ir a ver quienes son*");
             Console.WriteLine(@"Al llegar ves como se deshicieron de su rival facilmente, pero crees que estan
             cansados y es una oportunidad que aprovechar");
             Console.WriteLine(@" "+listaPersonajes[0].Datos.Name + ",vamos.");
+            Console.WriteLine("-----------TERCER COMBATE-----------");
+            Console.ForegroundColor = ConsoleColor.Green;
             Utilidades.EscribirLento("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
             Console.Clear();
-            Console.WriteLine("-----------TERCER COMBATE-----------");
 
         }
         private static void cuartoEncuentro(List<Personaje> listaPersonajes)
@@ -94,10 +99,11 @@ namespace Rondas
             Console.WriteLine(""+listaPersonajes[0].Datos.Name +":Bueno...");
             Console.WriteLine(""+listaPersonajes[0].Datos.Name+":Que gane el mejor!");
             Console.WriteLine(""+listaPersonajes[1].Datos.Name+":Que gane el mejor!");
+            Console.WriteLine("-----------FINAL-----------");
+            Console.ForegroundColor = ConsoleColor.Green;
             Utilidades.EscribirLento("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
             Console.Clear();
-            Console.WriteLine("-----------FINAL-----------");
         }
         private static List<Personaje> peleacion(List<Personaje> lista, Personaje personajeUsuario)
         {

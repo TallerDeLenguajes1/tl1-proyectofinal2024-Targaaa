@@ -36,16 +36,17 @@ namespace Inicio
                 En un mundo donde la magia y la realidad se entrelazan, te encuentras en la ciudad de Fuyuki, un lugar aparentemente tranquilo que 
         esconde un oscuro secreto. Cada pocas décadas, se celebra un misterioso evento conocido como la Guerra del Santo Grial, una feroz competencia
         en la que poderosos magos, conocidos como Masters, invocan espíritus heroicos del pasado llamados Servants para luchar por el legendario Santo Grial,
-        un artefacto capaz de conceder cualquier deseo.
+        un artefacto capaz de conceder cualquier deseo.");
 
-        Introduce tu nombre de Master:");
+        Console.Write("\n        Introduce tu nombre de Master: ");
         string playerName = Console.ReadLine();
-        Console.WriteLine("\nBienvenido " + playerName + @" te encuentras participando en esta peligrosa guerra. Con la ayuda del Servant que elijas,
+        Console.WriteLine("\n        Bienvenido " + playerName + @" te encuentras participando en esta peligrosa guerra. Con la ayuda del Servant que elijas,
         debes enfrentarte a otros Masters y Servants en una serie de intensas batallas mágicas.
         Explora la ciudad de Fuyuki, descubre los secretos de tus enemigos y desentraña las intrigas que rodean la Guerra del Santo Grial.
         Cada decisión que tomes puede acercarte a la victoria... o a la destrucción.
 
         ¿Estás listo para asumir tu destino y luchar por tus sueños? La Guerra del Santo Grial te espera.");
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("\n  Ingrese una tecla para continuar\n");
         Console.ReadKey(true);
         }

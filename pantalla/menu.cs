@@ -1,17 +1,24 @@
 using Inicio;
 using Personajes;
 using Rondas;
+using Historial;
 
 namespace MenuInicial{
     public class Menu
     {   
-        public static void mostrarMenu()
+        public static void empezar()
+        {
+            List<HistorialGanadores> listado = HistorialGanadores.CargarHistorialDesdeArchivo();
+            mostrarMenu(listado);
+        }
+        public static void mostrarMenu(List<HistorialGanadores> listado)
         {
             string[] opciones = {
                 "Jugar",
                 "Historial de Campeones",
                 "Salir"
             };
+            Console.CursorVisible = false;
             int opcionSeleccionada = 0;
             ConsoleKey key;
 
@@ -49,10 +56,10 @@ namespace MenuInicial{
                 case 0:
                     Presentacion.StartGame(); 
                     List<Personaje> listaPeleadores = Elegidos.Candidatos.ObtenerListaPeleadores();
-                    Formato.armadoCombates(listaPeleadores);
+                    Formato.armadoCombates(listaPeleadores, listado);
                 break;
                 case 1:
-                    //Historial.historialGanadores();
+                    HistorialGanadores.MostrarListado(listado);
                 break;
             }
         }

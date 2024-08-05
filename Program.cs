@@ -1,5 +1,6 @@
 ﻿using ArmarJsonPjsConApi;
 using MenuInicial;
+using Historial;
 
 await CargadorDatos.CargarDatosPersonajesAsync();
-Menu.mostrarMenu();
+Menu.empezar();
