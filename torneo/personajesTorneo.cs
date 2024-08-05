@@ -5,24 +5,24 @@ namespace Elegidos
 {
     public class Candidatos
     {
-        public static void personajePrincipal()
+        public static Personaje personajePrincipal(List<Personaje> listaPersonajes)
         {
 
             string jsonData = File.ReadAllText("Json/Personajes.json");
             List<Personaje> personajes = JsonSerializer.Deserialize<List<Personaje>>(jsonData);
 
             string[] opciones = new string[]
-        {
-            "1. Saber: Espíritu Heroico de la Espada. Un guerrero de todos los oficios. Ágil y poderoso en el combate cercano.",
-            "2. Archer: Espíritu Heroico del Arco. Excelentes exploradores que se destacan por poseer poderosos Noble Phantasms.",
-            "3. Lancer: Espíritu Heroico de la Lanza. Dotado de una agilidad extrema y competente en tácticas de golpe y fuga.",
-            "4. Caster: Espíritus heroicos de hechicería. Siendo uno de los pocos capaces de utilizar hechizos del más alto calibre.",
-            "5. Assassin: Espíritu heroico de asesinatos. Extremadamente hábil en operaciones encubiertas, sigilosas y silenciosas.",
-            "6. Berserker: Espíritu heroico de la furia frenética. Guerreros enloquecidos que han perdido casi todo rastro de cordura a cambio de un gran poder.",
-            "7. Rider: Espíritu heroico de la montura. Expertos de la montura capaces de domesticar cualquier bestia, ya sea mítica o mecánica.",
-            "8. Avenger: Espíritu Heróico de la venganza. Guerreros vengativos que han tenido un gran odio en el pasado, la personificación del odio en sí.",
-            "9. Shielder: Maestro de la defensa y sirviente del escudo. Guerrero único con una defensa casi inexpugnable."
-        };
+            {
+                "1. Saber: Espíritu Heroico de la Espada. Un guerrero de todos los oficios. Ágil y poderoso en el combate cercano.",
+                "2. Archer: Espíritu Heroico del Arco. Excelentes exploradores que se destacan por poseer poderosos Noble Phantasms.",
+                "3. Lancer: Espíritu Heroico de la Lanza. Dotado de una agilidad extrema y competente en tácticas de golpe y fuga.",
+                "4. Caster: Espíritus heroicos de hechicería. Siendo uno de los pocos capaces de utilizar hechizos del más alto calibre.",
+                "5. Assassin: Espíritu heroico de asesinatos. Extremadamente hábil en operaciones encubiertas, sigilosas y silenciosas.",
+                "6. Berserker: Espíritu heroico de la furia frenética. Guerreros enloquecidos que han perdido casi todo rastro de cordura a cambio de un gran poder.",
+                "7. Rider: Espíritu heroico de la montura. Expertos de la montura capaces de domesticar cualquier bestia, ya sea mítica o mecánica.",
+                "8. Avenger: Espíritu Heróico de la venganza. Guerreros vengativos que han tenido un gran odio en el pasado, la personificación del odio en sí.",
+                "9. Shielder: Maestro de la defensa y sirviente del escudo. Guerrero único con una defensa casi inexpugnable."
+            };
             int opcionSeleccionada = 0;
             ConsoleKey key;
 
@@ -96,29 +96,38 @@ namespace Elegidos
                 }
 
             } while (key != ConsoleKey.Enter);
-
+            Personaje seleccionado = personajesFiltrados[opcionSeleccionada];
             string servantEleccion = personajesFiltrados[opcionSeleccionada].Datos.Name;
             Console.Clear();
             Console.WriteLine($"Has seleccionado:\n{servantEleccion}");
-
+            Thread.Sleep(3000);
+            return seleccionado;
         }
-    public static List<Personaje> SeleccionarContrincantesAleatoriamente(List<Personaje> listaPersonajes, Personaje personajePrincipal)
-    {
-        Random random = new Random();
-        List<Personaje> enemigos = listaPersonajes.Where(p => p != personajePrincipal).OrderBy(p => random.Next()).Take(15).ToList();
-        return enemigos;
-    }
-
-    public static List<Personaje> ObtenerListaPeleadores()
-    {
-
-        List<Personaje> listaPersonajesElegidos = [];
-        foreach (var personaje in listaPersonajesElegidos)
+        public static List<Personaje> SeleccionarContrincantesAleatoriamente(List<Personaje> listaPersonajes, Personaje personajePrincipal)
         {
-            listaPersonajesElegidos.Add(personaje);
+            Random random = new Random();
+            List<Personaje> enemigos = listaPersonajes.Where(p => p != personajePrincipal).OrderBy(p => random.Next()).Take(15).ToList();
+            return enemigos;
         }
-        return listaPersonajesElegidos;
+
+        public static List<Personaje> ObtenerListaPeleadores()
+        {
+            string jsonData = File.ReadAllText("Json/Personajes.json");
+            List<Personaje> personajes = JsonSerializer.Deserialize<List<Personaje>>(jsonData);
+
+            
+            Personaje personajeElegido = Candidatos.personajePrincipal(personajes);
+
+            List<Personaje> listaPersonajesElegidos = [];
+            listaPersonajesElegidos.Add(personajeElegido);
+
+            List<Personaje> personajeElegidoAleatoriamente = Candidatos.SeleccionarContrincantesAleatoriamente(personajes, personajeElegido);
+            foreach (var personaje in personajeElegidoAleatoriamente)
+            {
+                listaPersonajesElegidos.Add(personaje);
+            }
+            return listaPersonajesElegidos;
+        }
     }
-}
 }
 

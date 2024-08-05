@@ -16,19 +16,19 @@ namespace Creaciones{
 
                     switch (personaje.rarity){
                         case 5:
-                            nuevoPersonaje.Caracteristicas.AtkBase = random.Next(35,40);
+                            nuevoPersonaje.Caracteristicas.Atk = random.Next(35,40);
                         break;
                         case 4:
-                            nuevoPersonaje.Caracteristicas.AtkBase = random.Next(30,35);
+                            nuevoPersonaje.Caracteristicas.Atk = random.Next(30,35);
                         break;
                         case 3:
-                            nuevoPersonaje.Caracteristicas.AtkBase = random.Next(25,30);
+                            nuevoPersonaje.Caracteristicas.Atk = random.Next(25,30);
                         break;
                         case 2:
-                            nuevoPersonaje.Caracteristicas.AtkBase = random.Next(20,25);
+                            nuevoPersonaje.Caracteristicas.Atk = random.Next(20,25);
                         break;
                         case 1:
-                            nuevoPersonaje.Caracteristicas.AtkBase = random.Next(15,20);
+                            nuevoPersonaje.Caracteristicas.Atk = random.Next(15,20);
                         break;
                     }
                     nuevoPersonaje.Caracteristicas.Hp = 100;

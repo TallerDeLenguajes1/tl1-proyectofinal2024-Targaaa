@@ -1,7 +1,7 @@
 using System.Reflection;
 using Personajes;
 using Elegidos;
-
+using Features;
 
 namespace Inicio
 {
@@ -9,6 +9,7 @@ namespace Inicio
     {
         public static void Titulo()
         {
+            Console.Clear();
             string textColor = "\u001b[31m";
             string resetColor = "\u001b[0m";
             Console.WriteLine(textColor + @"
@@ -29,25 +30,24 @@ namespace Inicio
         {
             Titulo();
             Thread.Sleep(3000);
-            Console.WriteLine(@"Bienvenido a Fate/stay night:
+            //Utilidades.EscribirLento();
+            Console.WriteLine(@"        Bienvenido a Fate/stay night:
+
                 En un mundo donde la magia y la realidad se entrelazan, te encuentras en la ciudad de Fuyuki, un lugar aparentemente tranquilo que 
-        esconde un oscuro secreto.Cada pocas décadas, se celebra un misterioso evento conocido como la Guerra del Santo Grial, una feroz competencia
+        esconde un oscuro secreto. Cada pocas décadas, se celebra un misterioso evento conocido como la Guerra del Santo Grial, una feroz competencia
         en la que poderosos magos, conocidos como Masters, invocan espíritus heroicos del pasado llamados Servants para luchar por el legendario Santo Grial,
         un artefacto capaz de conceder cualquier deseo.
 
         Introduce tu nombre de Master:");
         string playerName = Console.ReadLine();
-        Console.WriteLine("     Bienvenido " + playerName + @" te encuentras participando en esta peligrosa guerra. Con la ayuda del Servant que elijas,
+        Console.WriteLine("\nBienvenido " + playerName + @" te encuentras participando en esta peligrosa guerra. Con la ayuda del Servant que elijas,
         debes enfrentarte a otros Masters y Servants en una serie de intensas batallas mágicas.
         Explora la ciudad de Fuyuki, descubre los secretos de tus enemigos y desentraña las intrigas que rodean la Guerra del Santo Grial.
         Cada decisión que tomes puede acercarte a la victoria... o a la destrucción.
 
         ¿Estás listo para asumir tu destino y luchar por tus sueños? La Guerra del Santo Grial te espera.");
-        Thread.Sleep(5000);
-        Console.WriteLine("\nIngrese una tecla para continuar\n");
+        Console.WriteLine("\n  Ingrese una tecla para continuar\n");
         Console.ReadKey(true);
-        Elegidos.Candidatos.personajePrincipal();
-        
         }
     }
 }

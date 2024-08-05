@@ -7,15 +7,16 @@ namespace Combate
         public static Personaje Pelea(Personaje usuario,Personaje bot)
         {
             int turno = 0;
-            while(usuario.Caracteristicas.HpBase > 0 && bot.Caracteristicas.HpBase > 0)
+            while(usuario.Caracteristicas.Hp > 0 && bot.Caracteristicas.Hp > 0)
             {
                 if(turno == 0)
                 {
+                    int opcionSeleccionada = 0;
+                    ConsoleKey key;
+                    string[] opciones = { "Ataque Normal", "Ataque Especial", "Huir" };
                     do{
                         Console.Clear();
-                        string[] opciones = { "Ataque Normal", "Ataque Especial", "Huir" };
-                        opcionSeleccionada = 0;
-                        for (int i = 0; i < opciones.lenght; i++)
+                        for (int i = 0; i < opciones.Length; i++)
                         { 
                             if (i == opcionSeleccionada)
                             {
@@ -38,17 +39,17 @@ namespace Combate
                         }
                     }while(key != ConsoleKey.Enter);
                     switch(opcionSeleccionada){
-                        case 1: // case 1 o 0?
+                        case 0: // case 1 o 0?
                             ataqueNormal(usuario, bot);
                             turno = 1; //cambio turno
                             break;
-                        case 2: 
+                        case 1: 
                             ataqueEspecial(usuario,bot);
                             turno = 1; //cambio turno
                             break;
-                        case 3:
+                        case 2:
                             huir(usuario);
-                            usuario.Caracteristicas.HpBase = 0;
+                            usuario.Caracteristicas.Hp = 0;
                             break;
                     }
                 }
@@ -77,32 +78,39 @@ namespace Combate
                 return usuario;
             }
         }
+
         private static void ataqueNormal(Personaje atacante, Personaje defensor) //2 funcioems?
         {
             defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - atacante.Caracteristicas.Atk;
+            
             Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + atacante.Caracteristicas.Atk + "de daño\n");
             Console.WriteLine("\n Salud restante:" + defensor.Caracteristicas.Hp);
-            }
+            Thread.Sleep(3000);
+        }
         
 
         private static void ataqueEspecial(Personaje atacante, Personaje defensor)
         {
             int numeroRandom = rand.Next(1, 11);
             if(numeroRandom > 3)
-            {
+            {   
+                Console.Clear();
                 Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque especial pero falló");
+                Thread.Sleep(2000);
             }
             else{
                 defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - (atacante.Caracteristicas.Atk)*2;
+                Console.Clear();
                 Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + (atacante.Caracteristicas.Atk)*2 + "de daño\n");
                 Console.WriteLine("\nSalud restante:" + defensor.Caracteristicas.Hp);
+                Thread.Sleep(2000);
             }
         }
         private static void huir(Personaje usuario){ //buscar nombre de usuraio y agg musica
             string textColor = "\u001b[31m";
             string resetColor = "\u001b[0m";
             Console.WriteLine(textColor + @"
-                        _______  _______  _        _       _________ _        _______ 
+                         _______  _______  _        _       _________ _        _______ 
                         (  ____ \(  ___  )( \      ( \      \__   __/( (    /|(  ___  )
                         | (    \/| (   ) || (      | (         ) (   |  \  ( || (   ) |
                         | |      | (___) || |      | |         | |   |   \ | || (___) |
@@ -110,9 +118,10 @@ namespace Combate
                         | | \_  )| (   ) || |      | |         | |   | | \   || (   ) |
                         | (___) || )   ( || (____/\| (____/\___) (___| )  \  || )   ( |
                         (_______)|/     \|(_______/(_______/\_______/|/    )_)|/     \|
-                                                                                    
-                                              
                     " + resetColor);
+            Thread.Sleep(2000);
+            Console.WriteLine("\n " + usuario.Datos.Name + "Esta decepcionado de ti...");
         }
+        private static Random rand = new Random();
     }
 }

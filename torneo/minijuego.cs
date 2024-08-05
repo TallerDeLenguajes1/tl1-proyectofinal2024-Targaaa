@@ -1,6 +1,8 @@
+using Features;
+
 namespace Minijuego
 {
-    public class wordle
+    public class Wordle
     {
         private static List<string> palabras = new List<string>
         {
@@ -23,15 +25,16 @@ namespace Minijuego
 
         public void juego()
         {
-            Console.WriteLine("\n¿Qué es esto?...");
-            Console.WriteLine("\nParece un código, pero nose si tengo tiempo de descifrarlo.");
+            Utilidades.EscribirLento("\n¿Qué es esto?...");
+            Utilidades.EscribirLento("\nParece un código, pero nose si tengo tiempo de descifrarlo.");
             Thread.Sleep(2000);
-            Console.WriteLine("\n¿Qué me dices?, te animas a encontrar la palabra escondida?");
-            Console.WriteLine("\nAdivinarla te traerá benificios, pero quien sabe que te pasara si te equivocas...");
+            Console.WriteLine("**************************************************************************************");
+            Utilidades.EscribirLento("\nAdivinar la palabra te traerá benificios, pero quien sabe que te pasara si te equivocas...");
+            Console.WriteLine("**************************************************************************************");
             string[] opciones = new string[]
             {
-                "si","no"
-            }
+                "si","no",
+            };
             int opcionSeleccionada = 0;
             ConsoleKey key;
 
@@ -50,18 +53,18 @@ namespace Minijuego
                     {
                         Console.WriteLine("   " + opciones[i]);
                     }
-                    key = Console.ReadKey(true).Key;
-
-                    if (key == ConsoleKey.UpArrow)
-                    {
-                        opcionSeleccionada = (opcionSeleccionada == 0) ? opciones.Length - 1 : opcionSeleccionada - 1;
-                    }
-                    else if (key == ConsoleKey.DownArrow)
-                    {
-                        opcionSeleccionada = (opcionSeleccionada == opciones.Length - 1) ? 0 : opcionSeleccionada + 1;
-                    }
-                } while (key != ConsoleKey.Enter);
-            }
+                }
+                key = Console.ReadKey(true).Key;
+                if (key == ConsoleKey.UpArrow)
+                {
+                    opcionSeleccionada = (opcionSeleccionada == 0) ? opciones.Length - 1 : opcionSeleccionada - 1;
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    opcionSeleccionada = (opcionSeleccionada == opciones.Length - 1) ? 0 : opcionSeleccionada + 1;
+                }
+            }while(key != ConsoleKey.Enter);
+            
             string respuesta = opciones[opcionSeleccionada];
             if(respuesta == "si")
             {
