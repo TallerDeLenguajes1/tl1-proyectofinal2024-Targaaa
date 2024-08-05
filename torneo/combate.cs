@@ -84,7 +84,14 @@ namespace Combate
             defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - atacante.Caracteristicas.Atk;
             
             Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + atacante.Caracteristicas.Atk + "de daño\n");
-            Console.WriteLine("\n Salud restante:" + defensor.Caracteristicas.Hp);
+            if(defensor.Caracteristicas.Hp < 0)
+                {
+                    Console.WriteLine("\nSalud restante: 0");
+                }
+                else
+                {
+                    Console.WriteLine("\nSalud restante: " + defensor.Caracteristicas.Hp);
+                }
             Thread.Sleep(3000);
         }
         

@@ -1,0 +1,22 @@
+[
+  {
+    "Ganador": {
+      "Datos": {
+        "id": 0,
+        "name": "Koyanskaya of Light",
+        "className": "assassin",
+        "rarity": 5,
+        "attribute": "beast",
+        "Attribute": "beast",
+        "ClassName": "assassin",
+        "Name": "Koyanskaya of Light",
+        "Rarity": 5
+      },
+      "Caracteristicas": {
+        "Defensa": 100,
+        "Atk": 36,
+        "Hp": 100
+      }
+    }
+  }
+]

@@ -42,10 +42,10 @@ namespace Rondas
         {
             Console.Clear(); 
             Utilidades.EscribirLento(@"             Despues de pasar horas obteniendo información sobre esta guerra y tus openentes,
-            decides tomarte un descanso para prepararte correctamente. Fue justamente durante ese descanso que 
+            decides tomarte un descanso para prepararte correctamente. Fue justo durante ese descanso que 
             sientes que te observan, te giras para investigar y antes de darte cuenta te intentaron rebanar el cuello.
-            Con el alma encendida por la determinación y la adrenalina corriendo por tus
-            venas, te preparas para enfrentar a tu oponente. La guerra no esperará, y tampoco lo hará tu enemigo.");
+            Con el alma encendida por la determinación y la adrenalina corriendo por tus venas, te preparas para enfrentar a tu oponente.
+            La guerra no esperará, y tampoco lo hará tu enemigo.");
             Utilidades.EscribirLento("\nTe enfrantas a " + listaPersonajes[1].Datos.Name);
             Utilidades.EscribirLento("\nQue comience la batalla!!");
             Console.WriteLine("\n-----------PRIMER COMBATE-----------");
@@ -60,8 +60,7 @@ namespace Rondas
             Console.WriteLine(@"*Cof cof, tose sangre*.Ese bastardo era mas fuerte de lo que pensaba, no lo crees "
             + listaPersonajes[0].Datos.Name +"?");
             Console.WriteLine(""+ listaPersonajes[0].Datos.Name + ": Tranquilízate... Mientras yo este de tu lado solo habrá un ganador y ese seras tú.");
-            Console.WriteLine(@"Haha..., es reconfortante tener un compañero tan seguro de sí mismo, y sí... tienes razón, es mejor estar tranquilo.
-            Vamos, esto recien comienza.");
+            Console.WriteLine(@"Haha..., es reconfortante tener un compañero tan seguro de sí mismo, y sí... tienes razón, es mejor estar tranquilo. Vamos, esto recien comienza.");
             Utilidades.EscribirLento(".            .            .\n");
             Console.WriteLine(@"No puede ser... es "+ listaPersonajes[1].Datos.Name + " tenemos que huir "+listaPersonajes[0].Datos.Name);
             Console.WriteLine(@" "+listaPersonajes[1].Datos.Name + ": Por lo que veo me conocen, eso me facilitará las cosas.");
@@ -80,7 +79,7 @@ namespace Rondas
             Console.WriteLine(@"*Despues de descansar de la ultima batalla decides salir a buscar a tu proximo rival.");
             Console.WriteLine("Escuchas a dos guerreros pelear a lo lejos y decides ir a ver quienes son*");
             Console.WriteLine(@"Al llegar ves como se deshicieron de su rival facilmente, pero crees que estan
-            cansados y es una oportunidad que aprovechar");
+cansados y es una oportunidad que aprovechar");
             Console.WriteLine(@" "+listaPersonajes[0].Datos.Name + ",vamos.");
             Console.WriteLine("-----------TERCER COMBATE-----------");
             Console.ForegroundColor = ConsoleColor.Green;

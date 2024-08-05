@@ -87,7 +87,9 @@ namespace Minijuego
 
                 if (Verificar(prueba))
                 {
+                    Console.Clear();
                     Console.WriteLine("Descubriste el código, tus estadisticas aumentan!!");
+                    Thread.Sleep(2000);
                     return;
                 }
                 else
@@ -96,6 +98,7 @@ namespace Minijuego
                 }
             }
             Console.WriteLine($"Lo siento, no adivinaste la palabra. La palabra era: {palabraElegida}");
+            Thread.Sleep(2000);
             }
 
         }
