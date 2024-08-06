@@ -33,4 +33,5 @@ Algunas de las ideas que tuve para hacer este proyecto mas elaborado:
 -Sistema de niveles que cambien directamente las caracteristicas del personaje.
 
 -Por lo general, en la serie los servants suelen ocultar su identidad para que no tengan informacion sobre ellos en el combate, por lo que se me ocurrio dar pistas de cada personaje para ver si el usuario lo conoce y disminuir las estadisticas del rival
-
+##Autor
+Leandro Exequiel Targa Garcia
