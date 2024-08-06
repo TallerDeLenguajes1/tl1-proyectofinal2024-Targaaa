@@ -5,6 +5,7 @@ using Features;
 using Historial;
 using MenuInicial;
 using System.Media;
+using System.ComponentModel;
 
 namespace Rondas
 {
@@ -66,11 +67,11 @@ namespace Rondas
         private static void primerEncuentro(List<Personaje> listaPersonajes)
         {
             #if WINDOWS
-            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
-            Opening.PlayLooping();
+            SoundPlayer opening = new SoundPlayer(Rutas.menuSongs[0]);
+            opening.PlayLooping();
             #endif
             Console.Clear();
-             Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
             Utilidades.EscribirLento(@"             Despues de pasar horas obteniendo información sobre esta guerra y tus oponentes,
              decides tomarte un descanso para prepararte correctamente. Fue justo durante en ese momento que 
             sientes que te observan, te giras para investigar y antes de darte cuenta te intentaron rebanar el cuello.
@@ -82,6 +83,9 @@ namespace Rondas
             Utilidades.EscribirLento(@"-----------PRIMER COMBATE-----------"+ "\n");
             Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Green;
+            #if WINDOWS
+            opening.Stop();
+            #endif
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
         }
@@ -108,6 +112,9 @@ namespace Rondas
             Utilidades.EscribirLento("-----------SEGUNDO COMBATE-----------"+ "\n");
             Thread.Sleep(5000);
             Console.ForegroundColor = ConsoleColor.Green;
+            #if WINDOWS
+            Opening.Stop();
+            #endif
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
         }
@@ -127,6 +134,9 @@ namespace Rondas
             Utilidades.EscribirLento("-----------TERCER COMBATE-----------"+ "\n");
             Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Green;
+            #if WINDOWS
+            Opening.Stop();
+            #endif
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
 
@@ -151,6 +161,9 @@ la iglesia en donde tendrán un duelo a muerte para determinar quien obtendrá s
             Utilidades.EscribirLento("\n"+"-----------FINAL-----------"+ "\n");
             Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Green;
+            #if WINDOWS
+            Opening.Stop();
+            #endif
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
         }
@@ -161,6 +174,10 @@ la iglesia en donde tendrán un duelo a muerte para determinar quien obtendrá s
         }
         private static List<Personaje> peleacion(List<Personaje> lista, Personaje personajeUsuario)
         {
+            #if WINDOWS
+            SoundPlayer pelea = new SoundPlayer(Rutas.menuSongs[3]);
+            pelea.PlayLooping();
+            #endif
             List<Personaje> ganadores = new List<Personaje>();
             Random random = new Random();
             for(int i = 0;i<lista.Count; i+=2)
@@ -176,6 +193,9 @@ la iglesia en donde tendrán un duelo a muerte para determinar quien obtendrá s
                 }
                 ganadores.Add(ganador);
             }
+            #if WINDOWS
+            pelea.Stop();
+            #endif
             return ganadores;
         }
     }

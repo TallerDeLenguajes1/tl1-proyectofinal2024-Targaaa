@@ -7,9 +7,10 @@ namespace Inicio
     {
         public static void Titulo()
         {
-            
+            #if WINDOWS
             SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
             Opening.PlayLooping();
+            #endif
             Console.Clear();
             string textColor = "\u001b[33m";
             string resetColor = "\u001b[0m";

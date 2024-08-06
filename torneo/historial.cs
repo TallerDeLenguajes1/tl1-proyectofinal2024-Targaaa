@@ -65,6 +65,7 @@ namespace Historial
             Console.WriteLine("Ingrese una tecla para regresar al menu");
             Console.CursorVisible = false;
             Console.ReadKey(true);
+            cancion.Stop();
             Menu.mostrarMenu(listado);
         }
         public HistorialGanadores(Personaje ganador)

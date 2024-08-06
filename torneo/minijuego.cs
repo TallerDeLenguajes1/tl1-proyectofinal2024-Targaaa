@@ -79,6 +79,9 @@ namespace Minijuego
             Utilidades.EscribirLento("\nInstrucciones:");
             Console.WriteLine(@"El código es una palabra de 5 letras, en caso de que una letra de la palabra que ingresaste se encuentra en el codigo,
 esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se pondrá en mayúsculas. Buena suerte");
+            Console.WriteLine("\n  Ingrese una tecla para continuar\n");
+            Console.ReadKey(true);
+
             Random random = new Random();
             palabraElegida = palabras[random.Next(palabras.Count)];
             
