@@ -4,6 +4,7 @@ using Minijuego;
 using Features;
 using Historial;
 using MenuInicial;
+using System.Media;
 
 namespace Rondas
 {
@@ -22,7 +23,7 @@ namespace Rondas
                 List<Personaje> ganadoresSegundoEncuentro = peleacion(ganadoresPrimerEncuentro, personajeUsuario);
                 if(ganadoresSegundoEncuentro.Contains(personajeUsuario))
                 {
-                    wordlejuego.juego(personajeUsuario);;
+                    wordlejuego.juego(personajeUsuario);
                     tercerEncuentro(ganadoresSegundoEncuentro);
                     List<Personaje> ganadoresTercerEncuentro = peleacion(ganadoresSegundoEncuentro, personajeUsuario);
                     if(ganadoresSegundoEncuentro.Contains(personajeUsuario))
@@ -33,10 +34,12 @@ namespace Rondas
                         if(ganadoresCuartoEncuentro.Contains(personajeUsuario))
                         {
                             Console.Clear();
+                            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
                             Utilidades.EscribirLento("\nFelicidades!! Has ganado el ultimo combate, eres el Master que ha conseguido dominar al servant más fuerte");
                             Utilidades.EscribirLento("\nAhora tu nombre pasará a la historia, eres libre de usar el santo grial en todo su esplendor y cumplir tu deseo");
                             Utilidades.EscribirLento("\nComo? Que este juego te gustó tanto que tu deseo es volver a jugarlo?");
                             Utilidades.EscribirLento("\nDeseo cumplido!!");
+                            Console.WriteLine("\n╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
                             Menu.empezar();
                             HistorialGanadores.CargarHistorial(personajeUsuario, listado);
                         }
@@ -62,6 +65,10 @@ namespace Rondas
         }
         private static void primerEncuentro(List<Personaje> listaPersonajes)
         {
+            #if WINDOWS
+            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
+            Opening.PlayLooping();
+            #endif
             Console.Clear();
              Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
             Utilidades.EscribirLento(@"             Despues de pasar horas obteniendo información sobre esta guerra y tus oponentes,
@@ -80,6 +87,10 @@ namespace Rondas
         }
         private static void segundoEncuentro(List<Personaje> listaPersonajes)
         {
+            #if WINDOWS
+            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
+            Opening.PlayLooping();
+            #endif
             Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
             Utilidades.EscribirLento(@"*Cof cof, tose sangre*.Ese bastardo era mas fuerte de lo que pensaba, no lo crees "
@@ -103,6 +114,10 @@ namespace Rondas
 
         private static void tercerEncuentro(List<Personaje> listaPersonajes)
         {
+            #if WINDOWS
+            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
+            Opening.PlayLooping();
+            #endif
             Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
             Utilidades.EscribirLento(@"*Despues de descansar de la ultima batalla decides salir a buscar a tu proximo rival."+ "\n");
             Utilidades.EscribirLento(@"Escuchas a dos guerreros pelear a lo lejos y decides ir a ver quienes son*"+ "\n");
@@ -119,6 +134,10 @@ namespace Rondas
         }
         private static void cuartoEncuentro(List<Personaje> listaPersonajes)
         {
+            #if WINDOWS
+            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
+            Opening.PlayLooping();
+            #endif
             Console.Clear();
             Console.WriteLine("╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
             Utilidades.EscribirLento(@"Al quedar solo dos masters en la disputa por el santo grial, éste ultimo activa su poder y teletransporta a ambos magos hacia 

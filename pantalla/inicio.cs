@@ -1,7 +1,5 @@
-using System.Reflection;
-using Personajes;
-using Elegidos;
-using Features;
+using System.Media;
+using Features; 
 
 namespace Inicio
 {
@@ -9,6 +7,9 @@ namespace Inicio
     {
         public static void Titulo()
         {
+            
+            SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
+            Opening.PlayLooping();
             Console.Clear();
             string textColor = "\u001b[33m";
             string resetColor = "\u001b[0m";

@@ -1,6 +1,9 @@
 using System.Text.Json;
 using Personajes;
 using MenuInicial;
+using System.Media;
+using Features; 
+
 
 namespace Historial
 {
@@ -38,9 +41,11 @@ namespace Historial
         }
         public static void MostrarListado(List<HistorialGanadores> listado)
         {
+            SoundPlayer cancion = new SoundPlayer(Rutas.menuSongs[1]);
+            cancion.PlayLooping();
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║       Servants que fueron merecedores del Santo Grial             ║");
+            Console.WriteLine("║       Servants que fueron merecedores del Santo Grial              ║");
             Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
             if (listado.Count == 0)
             {
@@ -50,11 +55,11 @@ namespace Historial
             {
                 foreach (var ganador in listado)
                 {
-                    Console.WriteLine($"║  -> {ganador.Ganador.Datos.Name.PadRight(35)} ║");
+                    Console.WriteLine($"║  -> {ganador.Ganador.Datos.Name.PadRight(62)} ║");
                 }
             }
             Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
-            Console.WriteLine("║   Ingrese una tecla para regresar al menú                           ║");
+            Console.WriteLine("║   Ingrese una tecla para regresar al menú                          ║");
             Console.WriteLine("╚════════════════════════════════════════════════════════════════════╝");
             Console.WriteLine();
             Console.WriteLine("Ingrese una tecla para regresar al menu");

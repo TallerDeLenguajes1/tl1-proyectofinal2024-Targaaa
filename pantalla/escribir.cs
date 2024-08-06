@@ -1,3 +1,5 @@
+using System.Media;
+
 namespace Features
 {
     public static class Utilidades
@@ -11,6 +13,10 @@ namespace Features
             }
             
         }
+    }
+    public class Rutas()
+    {
+        public static string[] menuSongs = { @"recursos\audio\cancion1.wav", @"recursos\audio\historial.wav", @"recursos\audio\minijuego.wav" };
     }
 
 }
