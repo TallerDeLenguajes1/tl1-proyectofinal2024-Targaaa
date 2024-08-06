@@ -1,4 +1,4 @@
-using System.Media;
+
 
 namespace Features
 {
@@ -12,6 +12,13 @@ namespace Features
                 Thread.Sleep(5);
             }
             
+        }
+    public static void LimpiarBuffer()
+        {
+            while (Console.KeyAvailable)
+            {
+                Console.ReadKey(true);
+            }
         }
     }
     public class Rutas()

@@ -86,7 +86,7 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
             palabraElegida = palabras[random.Next(palabras.Count)];
             
             Console.Clear();
-            for (int intento = 0; intento < intentos; intento++)
+            for (int intento = 0; intento < intentos;)
             {
                 Console.WriteLine("╭─────────────────────────────────────────────╮");
                 Console.Write($"│ Intento {intento + 1} de {intentos}: ");
@@ -97,6 +97,7 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
                     Console.WriteLine("Por favor, introduce una palabra válida de 5 letras.");
                     continue;
                 }
+                intento++;
 
                 if (Verificar(prueba))
                 {

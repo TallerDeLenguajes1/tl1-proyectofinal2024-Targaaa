@@ -7,6 +7,7 @@
   <a href="#historia">Historia y contexto</a> •
   <a href="#datos-técnicos">Datos técnicos</a> •
   <a href="#próximas-implementaciones">Próximas implementaciones</a>
+  <a href="#fuentes">Fuentes</a>
 </p>
 
 ## Introducción
@@ -22,6 +23,7 @@ El ataque de los personajes se define de forma aleatoria pero dependiendo del ni
 Por ej: Los personajes con mayor rareza tendran un ataque de entre 35 y 40, y a partir de ahi iran disminuyendo los valores segun la rareza.
 Ademas el ataque especial el cual hace justo el doble de daño, tiene mas probabiolidad de fallar que de acertar por lo que es peligroso usarlo.
 Tambien tenemos el minijuego de wordle que ya todos conoceran, decidi agregarlo como innovacion y si adivinas la palabra correctamente obtendras un +5 en el ataque.
+Para poder utilizar musica debes descargar una extension de windows en tu consola utilizando el comando: dotnet add package System.Windows.Extensions
 
 ### Próximas implementaciones
 Algunas de las ideas que tuve para hacer este proyecto mas elaborado:
@@ -33,5 +35,13 @@ Algunas de las ideas que tuve para hacer este proyecto mas elaborado:
 -Sistema de niveles que cambien directamente las caracteristicas del personaje.
 
 -Por lo general, en la serie los servants suelen ocultar su identidad para que no tengan informacion sobre ellos en el combate, por lo que se me ocurrio dar pistas de cada personaje para ver si el usuario lo conoce y disminuir las estadisticas del rival
-##Autor
+
+###Fuentes
+Fuentes de informacion: https://atlasacademy.io/
+
+Api utilizada: https://api.atlasacademy.io/export/NA/basic_servant.json
+
+Pagina para el titulo: https://patorjk.com/software/taag/#p=display&f=Bloody&t=BakeOff
+
+## Autor
 Leandro Exequiel Targa Garcia

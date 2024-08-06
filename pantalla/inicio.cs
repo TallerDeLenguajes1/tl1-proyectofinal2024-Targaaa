@@ -40,10 +40,19 @@ namespace Inicio
         esconde un oscuro secreto. Cada pocas décadas, se celebra un misterioso evento conocido como la Guerra del Santo Grial, una feroz competencia
         en la que poderosos magos, conocidos como Masters, invocan espíritus heroicos del pasado llamados Servants para luchar por el legendario 
         Santo Grial, un artefacto capaz de conceder cualquier deseo.");
-        
-        Utilidades.EscribirLento("\n        Introduce tu nombre de Master: ");
-        string playerName = Console.ReadLine();
-            Console.WriteLine("╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣");
+        Utilidades.LimpiarBuffer();
+        string playerName;
+        do
+        {
+            Console.Write("\nIntroduce tu nombre de Master: ");
+            playerName = Console.ReadLine();
+    
+            if (string.IsNullOrWhiteSpace(playerName))
+            {
+                Console.WriteLine("El nombre no puede estar vacío. Por favor, introduce un nombre válido.");
+            }
+            } while (string.IsNullOrWhiteSpace(playerName));
+        Console.WriteLine("╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣");
         Utilidades.EscribirLento("\n        Bienvenido " + playerName + @" te encuentras participando en esta peligrosa guerra. Con la ayuda del Servant que elijas,
         debes enfrentarte a otros Masters y Servants en una serie de intensas batallas mágicas.
         Explora la ciudad de Fuyuki, descubre los secretos de tus enemigos y desentraña las intrigas que rodean la Guerra del Santo Grial.
@@ -52,6 +61,7 @@ namespace Inicio
         ¿Estás listo para asumir tu destino y luchar por tus sueños? La Guerra del Santo Grial te espera.");
             Console.WriteLine("\n╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
         Console.ForegroundColor = ConsoleColor.Green;
+        Utilidades.LimpiarBuffer();
         Console.WriteLine("\n  Ingrese una tecla para continuar\n");
         Console.ReadKey(true);
         }

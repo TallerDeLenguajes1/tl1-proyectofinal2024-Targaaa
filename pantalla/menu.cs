@@ -2,6 +2,7 @@ using Inicio;
 using Personajes;
 using Rondas;
 using Historial;
+using Features;
 
 namespace MenuInicial{
     public class Menu
@@ -21,9 +22,10 @@ namespace MenuInicial{
             Console.CursorVisible = false;
             int opcionSeleccionada = 0;
             ConsoleKey key;
-
+            Utilidades.LimpiarBuffer();
             do
             {
+                
                 Console.Clear();
                 Console.WriteLine("╔════════════════════════════════════════════════╗");
                 Console.WriteLine("║                MENÚ PRINCIPAL                  ║");
