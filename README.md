@@ -4,16 +4,16 @@
 
 <p align="center" style="margin: 10px 0;">
   <a href="#introducción">Introducción</a> •
-  <a href="#historia">Historia y contexto</a> •
+  <a href="#historia">Historia</a> •
   <a href="#datos-técnicos">Datos técnicos</a> •
-  <a href="#próximas-implementaciones">Próximas implementaciones</a>
+  <a href="#próximas-implementaciones">Próximas implementaciones</a> •
   <a href="#fuentes">Fuentes</a>
 </p>
 
 ## Introducción
 The Glory grail es un juego en donde participarás de una guerra en contra de poderosos rivales para hacerte con el santo grial. Deberas ganar en varias peleas por turnos y pasar por minijuegos de adivinar palabras para hacerte más fuerte.
 
-## Historia y contexto
+## Historia
 Este juego esta basado en una serie llamada Fate Zero. La historia se centra en la guerra del Santo Grial, una batalla de magos ocultada a los humanos en donde se invocan famosos  guerreros del pasado llamados servants para luchar al lado del mago que lo invocó, todos irán tras el Santo Grial, un artefacto místico que concede cualquier deseo.
 
 ## Datos técnicos
