@@ -7,10 +7,8 @@ namespace Inicio
     {
         public static void Titulo()
         {
-            #if WINDOWS
             SoundPlayer Opening = new SoundPlayer(Rutas.menuSongs[0]);
             Opening.PlayLooping();
-            #endif
             Console.Clear();
             string textColor = "\u001b[33m";
             string resetColor = "\u001b[0m";
@@ -44,7 +42,7 @@ namespace Inicio
         string playerName;
         do
         {
-            Console.Write("\nIntroduce tu nombre de Master: ");
+            Console.Write("\n   Introduce tu nombre de Master: ");
             playerName = Console.ReadLine();
     
             if (string.IsNullOrWhiteSpace(playerName))

@@ -67,6 +67,10 @@ namespace MenuInicial{
                 case 1:
                     HistorialGanadores.MostrarListado(listado);
                 break;
+                default:
+                    Utilidades.EscribirLento("Saliendo...");
+                    Thread.Sleep(1000);
+                    return;
             }
         }
     }

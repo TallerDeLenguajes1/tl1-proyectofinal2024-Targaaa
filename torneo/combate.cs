@@ -1,4 +1,6 @@
 using Personajes;
+using System.Media;
+using Features;
 
 namespace Combate
 {
@@ -127,6 +129,8 @@ namespace Combate
         }
         private static void huir(Personaje usuario){ 
             Console.Clear();
+            SoundPlayer huir = new SoundPlayer(Rutas.menuSongs[4]);
+            huir.PlayLooping();
             string textColor = "\u001b[31m";
             string resetColor = "\u001b[0m";
             Console.WriteLine(textColor + @"
@@ -139,8 +143,9 @@ namespace Combate
                         | (___) || )   ( || (____/\| (____/\___) (___| )  \  || )   ( |
                         (_______)|/     \|(_______/(_______/\_______/|/    )_)|/     \|
                     " + resetColor);
-            Thread.Sleep(2000);
+            Thread.Sleep(4300);
             Console.WriteLine("\n " + usuario.Datos.Name + " está decepcionado de ti...");
+            huir.Stop();
         }
         private static Random rand = new Random();
     }

@@ -72,10 +72,9 @@ namespace Minijuego
             string respuesta = opciones[opcionSeleccionada];
             if(respuesta == "si")
             {
-            #if WINDOWS
+
             SoundPlayer mariotema = new SoundPlayer(Rutas.menuSongs[2]);
             mariotema.PlayLooping();
-            #endif
             Utilidades.EscribirLento("\nInstrucciones:");
             Console.WriteLine(@"El código es una palabra de 5 letras, en caso de que una letra de la palabra que ingresaste se encuentra en el codigo,
 esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se pondrá en mayúsculas. Buena suerte");
@@ -107,6 +106,7 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
                     Console.WriteLine("╰────────────────────────────────────────────────────╯");
                     personajeUsuario = cambiarEstadisticas(personajeUsuario);
                     Thread.Sleep(3000);
+                    mariotema.Stop();
                     return;
                 }
                 else
@@ -115,6 +115,7 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
                 }
             }
             Console.WriteLine($"Lo siento, no adivinaste la palabra. La palabra era: {palabraElegida}");
+            mariotema.Stop();
             Thread.Sleep(3000);
             }
 

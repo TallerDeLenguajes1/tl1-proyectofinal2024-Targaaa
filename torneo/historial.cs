@@ -64,8 +64,6 @@ namespace Historial
             Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
             Console.WriteLine("║   Ingrese una tecla para regresar al menú                          ║");
             Console.WriteLine("╚════════════════════════════════════════════════════════════════════╝");
-            Console.WriteLine();
-            Console.WriteLine("Ingrese una tecla para regresar al menu");
             Console.CursorVisible = false;
             Console.ReadKey(true);
 
