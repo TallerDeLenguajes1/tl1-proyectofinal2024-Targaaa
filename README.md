@@ -36,6 +36,8 @@ Algunas de las ideas que tuve para hacer este proyecto mas elaborado:
 
 -Por lo general, en la serie los servants suelen ocultar su identidad para que no tengan informacion sobre ellos en el combate, por lo que se me ocurrio dar pistas de cada personaje para ver si el usuario lo conoce y disminuir las estadisticas del rival
 
+-Incorporar en el historial de ganadores a los enemigos que derrotó en el camino para llegar a la victoria
+
 ### Fuentes
 Fuentes de informacion: https://atlasacademy.io/
 
