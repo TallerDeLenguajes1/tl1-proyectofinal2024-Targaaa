@@ -3,18 +3,58 @@
     "Ganador": {
       "Datos": {
         "id": 0,
-        "name": "Koyanskaya of Light",
-        "className": "assassin",
+        "name": "Altria Pendragon (Alter)",
+        "className": "saber",
+        "rarity": 4,
+        "attribute": "human",
+        "Attribute": "human",
+        "ClassName": "saber",
+        "Name": "Altria Pendragon (Alter)",
+        "Rarity": 4
+      },
+      "Caracteristicas": {
+        "Defensa": 100,
+        "Atk": 31,
+        "Hp": 100
+      }
+    }
+  },
+  {
+    "Ganador": {
+      "Datos": {
+        "id": 0,
+        "name": "Gilgamesh",
+        "className": "archer",
         "rarity": 5,
-        "attribute": "beast",
-        "Attribute": "beast",
-        "ClassName": "assassin",
-        "Name": "Koyanskaya of Light",
+        "attribute": "sky",
+        "Attribute": "sky",
+        "ClassName": "archer",
+        "Name": "Gilgamesh",
         "Rarity": 5
       },
       "Caracteristicas": {
         "Defensa": 100,
-        "Atk": 36,
+        "Atk": 35,
+        "Hp": 100
+      }
+    }
+  },
+  {
+    "Ganador": {
+      "Datos": {
+        "id": 0,
+        "name": "Gareth (Saber)",
+        "className": "saber",
+        "rarity": 4,
+        "attribute": "earth",
+        "Attribute": "earth",
+        "ClassName": "saber",
+        "Name": "Gareth (Saber)",
+        "Rarity": 4
+      },
+      "Caracteristicas": {
+        "Defensa": 100,
+        "Atk": 37,
         "Hp": 100
       }
     }

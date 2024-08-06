@@ -25,20 +25,24 @@ namespace MenuInicial{
             do
             {
                 Console.Clear();
+                Console.WriteLine("╔════════════════════════════════════════════════╗");
+                Console.WriteLine("║                MENÚ PRINCIPAL                  ║");
+
+                Console.WriteLine("╠════════════════════════════════════════════════╣");
                 for (int i = 0; i < opciones.Length; i++)
                 {
                     if (i == opcionSeleccionada)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("-> " + opciones[i]);
+                        Console.WriteLine($"║ -> {opciones[i].PadRight(43)} ║");
                         Console.ResetColor();
                     }
                     else
                     {
-                        Console.WriteLine("   " + opciones[i]);
+                        Console.WriteLine($"║    {opciones[i].PadRight(43)} ║");
                     }
                 }
-
+                Console.WriteLine("╚════════════════════════════════════════════════╝");
                 key = Console.ReadKey(true).Key;
 
                 if (key == ConsoleKey.UpArrow)

@@ -68,22 +68,24 @@ namespace Elegidos
             do
             {
                 Console.Clear();
-                Console.WriteLine($"Lista de personajes de la clase {claseEleccion}:\n");
+                Console.WriteLine("╔════════════════════════════════════════════════════════════════════╗");
+                Console.WriteLine($"║ Lista de personajes de la clase {claseEleccion.PadRight(34)} ║");
+                Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
 
                 for (int i = 0; i < personajesFiltrados.Count; i++)
                 {
                     if (i == opcionSeleccionada)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("-> " + personajesFiltrados[i].Datos.Name + " Rareza: " + personajesFiltrados[i].Datos.Rarity + "*");
+                        Console.WriteLine($"║ -> {personajesFiltrados[i].Datos.Name.PadRight(52)} Rareza: {personajesFiltrados[i].Datos.Rarity}* ║");
                         Console.ResetColor();
                     }
                     else
                     {
-                        Console.WriteLine("   " + personajesFiltrados[i].Datos.Name + " Rareza: " + personajesFiltrados[i].Datos.Rarity + "*");
+                        Console.WriteLine($"║    {personajesFiltrados[i].Datos.Name.PadRight(52)} Rareza: {personajesFiltrados[i].Datos.Rarity}* ║");
                     }
                 }
-
+                Console.WriteLine("╚════════════════════════════════════════════════════════════════════╝");
                 key = Console.ReadKey(true).Key;
 
                 if (key == ConsoleKey.UpArrow)

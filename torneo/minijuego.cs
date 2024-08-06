@@ -1,5 +1,5 @@
 using Features;
-
+using Personajes;
 namespace Minijuego
 {
     public class Wordle
@@ -23,14 +23,11 @@ namespace Minijuego
         private string palabraElegida;
         private int intentos = 6;
 
-        public void juego()
+        public void juego(Personaje personajeUsuario)
         {
             Utilidades.EscribirLento("\n¿Qué es esto?...");
             Utilidades.EscribirLento("\nParece un código, pero nose si tengo tiempo de descifrarlo.");
-            Thread.Sleep(2000);
-            Console.WriteLine("\n**************************************************************************************");
             Utilidades.EscribirLento("\nAdivinar la palabra te traerá benificios, pero quien sabe que te pasara si te equivocas...");
-            Console.WriteLine("\n**************************************************************************************");
             Thread.Sleep(2000);
             string[] opciones = new string[]
             {
@@ -42,19 +39,23 @@ namespace Minijuego
             do
             {
                 Console.Clear();
+                Console.WriteLine("╭────────────────────────────────────────────────╮");
+                Console.WriteLine("│                  Minujuego Wordle              │");
+                Console.WriteLine("├────────────────────────────────────────────────┤");
                 for (int i = 0; i < opciones.Length; i++)
                 {
                     if (i == opcionSeleccionada)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("-> " + opciones[i]);
+                        Console.WriteLine($"│ » {opciones[i].PadRight(44)} │");
                         Console.ResetColor();
                     }
                     else
                     {
-                        Console.WriteLine("   " + opciones[i]);
+                        Console.WriteLine($"│ » {opciones[i].PadRight(44)} │");
                     }
                 }
+                Console.WriteLine("╰────────────────────────────────────────────────╯");
                 key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.UpArrow)
                 {
@@ -69,7 +70,9 @@ namespace Minijuego
             string respuesta = opciones[opcionSeleccionada];
             if(respuesta == "si")
             {
-
+            Utilidades.EscribirLento("\nInstrucciones:");
+            Console.WriteLine(@"El código es una palabra de 5 letras, en caso de que una letra de la palabra que ingresaste se encuentra en el codigo,
+esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se pondrá en mayúsculas. Buena suerte");
             Random random = new Random();
             palabraElegida = palabras[random.Next(palabras.Count)];
             
@@ -88,8 +91,9 @@ namespace Minijuego
                 if (Verificar(prueba))
                 {
                     Console.Clear();
-                    Console.WriteLine("Descubriste el código, tus estadisticas aumentan!!");
-                    Thread.Sleep(2000);
+                    Console.WriteLine("\nDescubriste el código, tus estadisticas aumentan!!");
+                    personajeUsuario = cambiarEstadisticas(personajeUsuario);
+                    Thread.Sleep(3000);
                     return;
                 }
                 else
@@ -98,11 +102,16 @@ namespace Minijuego
                 }
             }
             Console.WriteLine($"Lo siento, no adivinaste la palabra. La palabra era: {palabraElegida}");
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
             }
 
         }
+        public static Personaje cambiarEstadisticas(Personaje personajeUsuario)
+        {
 
+            personajeUsuario.Caracteristicas.Atk += 5;
+            return personajeUsuario;
+        }
         private bool Verificar(string prueba)
         {
             return prueba.Equals(palabraElegida, StringComparison.OrdinalIgnoreCase);

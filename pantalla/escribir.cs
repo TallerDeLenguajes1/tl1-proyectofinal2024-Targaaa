@@ -7,8 +7,10 @@ namespace Features
             foreach (char c in texto)
             { 
                 Console.Write(c);
-                Thread.Sleep(30);
+                Thread.Sleep(5);
             }
+            
         }
     }
+
 }

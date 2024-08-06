@@ -16,18 +16,23 @@ namespace Combate
                     string[] opciones = { "Ataque Normal", "Ataque Especial", "Huir" };
                     do{
                         Console.Clear();
+                        Console.WriteLine("╭────────────────────────────────────────────────╮");
+                        Console.WriteLine("│                  MENÚ DE ATAQUE                │");
+                        Console.WriteLine("├────────────────────────────────────────────────┤");
                         for (int i = 0; i < opciones.Length; i++)
                         { 
                             if (i == opcionSeleccionada)
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine(" " + opciones[i]);
+                                Console.WriteLine($"│ » {opciones[i].PadRight(44)} │");
                                 Console.ResetColor();
                             }
                             else{
-                                Console.WriteLine(" " + opciones[i]);
+                                Console.WriteLine($"│ » {opciones[i].PadRight(44)} │");
                             }
                         }
+                        Console.WriteLine("╰────────────────────────────────────────────────╯");
+
                         key = Console.ReadKey(true).Key;
                         if (key == ConsoleKey.UpArrow)
                         {
@@ -83,14 +88,14 @@ namespace Combate
         {
             defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - atacante.Caracteristicas.Atk;
             
-            Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + atacante.Caracteristicas.Atk + "de daño\n");
+            Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque normal y causó " + atacante.Caracteristicas.Atk + " de daño\n");
             if(defensor.Caracteristicas.Hp < 0)
                 {
-                    Console.WriteLine("\nSalud restante: 0");
+                    Console.WriteLine(@"Salud restante de "+defensor.Datos.Name+": 0");
                 }
                 else
                 {
-                    Console.WriteLine("\nSalud restante: " + defensor.Caracteristicas.Hp);
+                    Console.WriteLine(@"Salud restante de "+defensor.Datos.Name+": " + defensor.Caracteristicas.Hp);
                 }
             Thread.Sleep(3000);
         }
@@ -108,14 +113,14 @@ namespace Combate
             else{
                 defensor.Caracteristicas.Hp = defensor.Caracteristicas.Hp - (atacante.Caracteristicas.Atk)*2;
                 Console.Clear();
-                Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque especial y causó " + (atacante.Caracteristicas.Atk)*2 + "de daño\n");
+                Console.WriteLine("\n" + atacante.Datos.Name + " usó ataque especial y causó " + (atacante.Caracteristicas.Atk)*2 + " de daño\n");
                 if(defensor.Caracteristicas.Hp < 0)
                 {
-                    Console.WriteLine("\nSalud restante: 0");
+                    Console.WriteLine(@"Salud restante de "+defensor.Datos.Name+": 0");
                 }
                 else
                 {
-                    Console.WriteLine("\nSalud restante: " + defensor.Caracteristicas.Hp);
+                    Console.WriteLine(@"Salud restante de "+defensor.Datos.Name+": " + defensor.Caracteristicas.Hp);
                 }
                 Thread.Sleep(2000);
             }

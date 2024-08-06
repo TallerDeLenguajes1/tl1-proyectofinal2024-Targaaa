@@ -38,20 +38,24 @@ namespace Historial
         }
         public static void MostrarListado(List<HistorialGanadores> listado)
         {
-            Console.WriteLine("Servants que fueron merecedores del Santo Grial");
-            Console.WriteLine();
+            Console.Clear();
+            Console.WriteLine("╔════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("║       Servants que fueron merecedores del Santo Grial             ║");
+            Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
             if (listado.Count == 0)
             {
-                Console.WriteLine("Nadie fue merecedor aun");
+                Console.WriteLine("║      Nadie fue merecedor aún                                       ║");
             }
             else
             {
                 foreach (var ganador in listado)
                 {
-                    Console.WriteLine("\r" + ganador.Ganador.Datos.Name);
+                    Console.WriteLine($"║  -> {ganador.Ganador.Datos.Name.PadRight(35)} ║");
                 }
             }
-
+            Console.WriteLine("╠════════════════════════════════════════════════════════════════════╣");
+            Console.WriteLine("║   Ingrese una tecla para regresar al menú                           ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════╝");
             Console.WriteLine();
             Console.WriteLine("Ingrese una tecla para regresar al menu");
             Console.CursorVisible = false;
