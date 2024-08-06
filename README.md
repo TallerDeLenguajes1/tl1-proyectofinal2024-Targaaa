@@ -23,7 +23,7 @@ Por ej: Los personajes con mayor rareza tendran un ataque de entre 35 y 40, y a 
 Ademas el ataque especial el cual hace justo el doble de daño, tiene mas probabiolidad de fallar que de acertar por lo que es peligroso usarlo.
 Tambien tenemos el ,imijuego de wordle que ya todos conoceran, decidi agregarlo como innovacion y si adivinas la palabra correctamente obtendras un +5 en el ataque.
 
-###Proximas implementaciones
+### Próximas implementaciones
 Algunas de las ideas que tuve para hacer este proyecto mas elaborado:
 -Agregar un sistema de monedas como recompensa para usarla en la tienda.
 -En la serie, los servants tienen un arma especial fantasma noble, que se desbloquea cumpliendo ciertos requisitos.
