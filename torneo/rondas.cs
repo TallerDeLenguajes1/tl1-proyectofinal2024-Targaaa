@@ -48,21 +48,25 @@ namespace Rondas
                         else
                         {
                             mensajeDerrota();
+                            Menu.empezar();
                         }
                     }
                     else
                     {
                         mensajeDerrota();
+                        Menu.empezar();
                     }
                 }
                 else
                 {
                     mensajeDerrota();
+                    Menu.empezar();
                 }
             }
             else
             {
                 mensajeDerrota();
+                Menu.empezar();
             }
         }
         private static void primerEncuentro(List<Personaje> listaPersonajes)
@@ -80,6 +84,7 @@ namespace Rondas
             Utilidades.EscribirLento(@"Que comience la batalla!!"+ "\n");
             Utilidades.EscribirLento(@"-----------PRIMER COMBATE-----------"+ "\n");
             Thread.Sleep(3000);
+            Utilidades.LimpiarBuffer();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
@@ -109,7 +114,7 @@ namespace Rondas
             Console.ForegroundColor = ConsoleColor.Green;
 
             Opening.Stop();
-
+            Utilidades.LimpiarBuffer();
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
         }
@@ -130,6 +135,7 @@ namespace Rondas
             Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Green;
             Opening.Stop();
+            Utilidades.LimpiarBuffer();
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
 
@@ -153,6 +159,7 @@ la iglesia en donde tendrán un duelo a muerte para determinar quien obtendrá s
             Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.Green;
             Opening.Stop();
+            Utilidades.LimpiarBuffer();
             Console.WriteLine("\nIngrese una tecla para continuar\n");
             Console.ReadKey(true);
         }
@@ -160,6 +167,7 @@ la iglesia en donde tendrán un duelo a muerte para determinar quien obtendrá s
         {
             Utilidades.EscribirLento("\n Pensaste que sería tan fácil?");
             Utilidades.EscribirLento("\n Vuelve cuando seas un verdadero master.");
+            Thread.Sleep(3000);
         }
         private static List<Personaje> peleacion(List<Personaje> lista, Personaje personajeUsuario)
         {
