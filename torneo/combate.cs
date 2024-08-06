@@ -125,7 +125,8 @@ namespace Combate
                 Thread.Sleep(2000);
             }
         }
-        private static void huir(Personaje usuario){ //buscar nombre de usuraio y agg musica
+        private static void huir(Personaje usuario){ 
+            Console.Clear();
             string textColor = "\u001b[31m";
             string resetColor = "\u001b[0m";
             Console.WriteLine(textColor + @"

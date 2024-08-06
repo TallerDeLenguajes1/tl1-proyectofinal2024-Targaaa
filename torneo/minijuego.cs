@@ -40,7 +40,7 @@ namespace Minijuego
             {
                 Console.Clear();
                 Console.WriteLine("╭────────────────────────────────────────────────╮");
-                Console.WriteLine("│                  Minujuego Wordle              │");
+                Console.WriteLine("│                  Minijuego Wordle              │");
                 Console.WriteLine("├────────────────────────────────────────────────┤");
                 for (int i = 0; i < opciones.Length; i++)
                 {
@@ -76,12 +76,13 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
             Random random = new Random();
             palabraElegida = palabras[random.Next(palabras.Count)];
             
-            
+            Console.Clear();
             for (int intento = 0; intento < intentos; intento++)
             {
-                Console.Write($"Intento {intento + 1} de {intentos}: ");
+                Console.WriteLine("╭─────────────────────────────────────────────╮");
+                Console.Write($"│ Intento {intento + 1} de {intentos}: ");
                 string prueba = Console.ReadLine();
-
+                Console.WriteLine("╰─────────────────────────────────────────────╯");
                 if (prueba.Length != 5)
                 {
                     Console.WriteLine("Por favor, introduce una palabra válida de 5 letras.");
@@ -91,7 +92,9 @@ esta será una coincidencia. Y en el caso de que coincida en el lugar exacto, se
                 if (Verificar(prueba))
                 {
                     Console.Clear();
-                    Console.WriteLine("\nDescubriste el código, tus estadisticas aumentan!!");
+                    Console.WriteLine("╭────────────────────────────────────────────────────╮");
+                    Console.WriteLine("│ Descubriste el código, ¡tus estadísticas aumentan! │");
+                    Console.WriteLine("╰────────────────────────────────────────────────────╯");
                     personajeUsuario = cambiarEstadisticas(personajeUsuario);
                     Thread.Sleep(3000);
                     return;
